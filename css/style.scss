@@ -27,6 +27,7 @@ $desktop-width: 1080px;
     }
 }
 
+
 body {
     background: var(--c-extralightgrey);
 }
@@ -163,9 +164,9 @@ header {
 
 main {
     margin-top: var(--m-mobile-header);
+    height: 100%;
 
     .container {
-        min-height: 100%;
 
        @include desktop() {
         display: grid;
@@ -257,6 +258,12 @@ footer {
     margin-top: 0.9375rem;
     background: var(--c-darkblue);
     text-align: center;
+
+    @include desktop() {
+        position: fixed;
+        width: 100%;
+        bottom:0;
+    }
 
     > p {
         font-weight: bold;

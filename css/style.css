@@ -14,10 +14,6 @@ body {
   background: var(--c-extralightgrey);
 }
 
-.container {
-  width: 100%;
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -32,6 +28,10 @@ header {
     height: var(--m-header);
     text-align: unset;
   }
+}
+
+header .container {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -110,6 +110,13 @@ header .nav__list .nav__btn--active {
   border-bottom: solid thin var(--c-black);
 }
 
+@media screen and (min-width: 768px) {
+  header .nav__list .nav__btn--active {
+    border-bottom: unset;
+    text-decoration: underline;
+  }
+}
+
 header form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,17 +132,19 @@ header form {
   header form {
     margin-top: calc((var(--m-header) / 2) - (1.56rem / 2));
     line-height: var(--m-header);
+    height: 2rem;
   }
 }
 
 header form > input[type="search"] {
   width: 18.75rem;
   border-radius: 1.56rem 0 0 1.56rem;
+  border-color: var(--c-black);
 }
 
 @media screen and (min-width: 768px) {
   header form > input[type="search"] {
-    width: 7.75rem;
+    width: 18.75rem;
   }
 }
 
@@ -144,14 +153,48 @@ header form > input[type="submit"] {
           box-sizing: border-box;
   border-radius: 0 1.56rem 1.56rem 0;
   background-color: var(--c-lightblue);
+  border-color: var(--c-black);
 }
 
 header .trips-button {
   display: none;
 }
 
+@media screen and (min-width: 1080px) {
+  header .trips-button {
+    display: block;
+    line-height: var(--m-header);
+  }
+}
+
+header .trips-button > button {
+  color: var(--c-black);
+  background-color: var(--c-lightblue);
+  border-radius: 1.56rem;
+  padding: 0.625rem;
+  text-transform: uppercase;
+}
+
 main {
   margin-top: var(--m-mobile-header);
+}
+
+main .container {
+  min-height: 100%;
+}
+
+@media screen and (min-width: 1080px) {
+  main .container {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "hero hero hero" "main-content aside aside";
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+main aside {
+  grid-area: aside;
 }
 
 @media screen and (min-width: 768px) {
@@ -179,6 +222,16 @@ main {
   text-transform: uppercase;
 }
 
+@media screen and (min-width: 1080px) {
+  .hero {
+    grid-area: hero;
+  }
+}
+
+article .main-article {
+  grid-area: main-article;
+}
+
 article > .article-title {
   font-weight: bold;
   margin: 0 0 0.3125rem 0.3125rem;
@@ -194,7 +247,9 @@ article > .article-text {
   text-align: center;
   width: 95%;
   max-width: 28.12rem;
-  margin: 0 auto;
+  margin: 0.5rem auto;
+  -webkit-box-shadow: 0.625rem 0.75rem 0.5rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0.625rem 0.75rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .organiser-card__title {
@@ -214,6 +269,7 @@ article > .article-text {
 }
 
 footer {
+  width: 100%;
   margin-top: 0.9375rem;
   background: var(--c-darkblue);
   text-align: center;

@@ -13,7 +13,7 @@
 }
 
 $tablet-width: 768px;
-$desktop-width: 992px;
+$desktop-width: 1080px;
 
 @mixin tablet {
     @media screen and (min-width:#{$tablet-width}) {
@@ -31,10 +31,6 @@ body {
     background: var(--c-extralightgrey);
 }
 
-.container {
-    width: 100%;
-}
-
 header {
     position: fixed;
     width: 100%;
@@ -49,6 +45,8 @@ header {
     }
 
     .container {
+        width: 100%;
+
         @include tablet() {
             display: flex;
             justify-content: space-evenly;
@@ -105,6 +103,11 @@ header {
             &--active {
                 color: var(--c-black);
                 border-bottom: solid thin var(--c-black);
+
+                @include tablet() {
+                    border-bottom: unset;
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -116,16 +119,19 @@ header {
         height: 1.56rem;
 
         @include tablet {
+            // Ask teacher about centering this
             margin-top: calc((var(--m-header) / 2) - (1.56rem / 2));
             line-height: var(--m-header);
+            height: 2rem;
         }
 
         > input[type="search"] {
             width: 18.75rem;
             border-radius: 1.56rem 0 0 1.56rem;
+            border-color: var(--c-black);
 
             @include tablet {
-                width: 7.75rem;
+                width: 18.75rem;
             }
         }
 
@@ -133,16 +139,48 @@ header {
             box-sizing: border-box;
             border-radius: 0 1.56rem 1.56rem 0;
             background-color: var(--c-lightblue);
+            border-color: var(--c-black);
         }
     }
 
     .trips-button {
         display: none;
+
+        @include desktop() {
+            display: block;
+            line-height: var(--m-header);
+        }
+
+        > button {
+            color: var(--c-black);
+            background-color: var(--c-lightblue);
+            border-radius: 1.56rem;
+            padding: 0.625rem;
+            text-transform: uppercase;
+        }
     }
 }
 
 main {
     margin-top: var(--m-mobile-header);
+
+    .container {
+        min-height: 100%;
+
+       @include desktop() {
+        display: grid;
+        grid-template-areas:
+            "hero hero hero"
+            "main-content aside aside";
+
+            width: 80%;
+            margin: 0 auto;
+       }
+    }
+
+    aside {
+        grid-area: aside;
+    }
 
     @include tablet() {
         margin-top: var(--m-header);
@@ -166,9 +204,18 @@ main {
         font-size: 0.8125rem;
         text-transform: uppercase;
     }
+
+    @include desktop() {
+        grid-area: hero;
+    }
 }
 
 article {
+
+    .main-article {
+        grid-area: main-article;
+    }
+
     > .article-title {
         font-weight: bold;
         margin: 0 0 0.3125rem 0.3125rem;
@@ -185,7 +232,8 @@ article {
     text-align: center;
     width: 95%;
     max-width: 28.12rem;
-    margin: 0 auto;
+    margin: 0.5rem auto;
+    box-shadow: 0.625rem 0.75rem 0.5rem rgba(0, 0, 0, 0.5);
 
     &__title {
         font-weight: bold;
@@ -205,6 +253,7 @@ article {
 }
 
 footer {
+    width: 100%;
     margin-top: 0.9375rem;
     background: var(--c-darkblue);
     text-align: center;

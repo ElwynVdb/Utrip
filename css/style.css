@@ -17,8 +17,12 @@ body {
 }
 
 header {
+  position: fixed;
+  width: 100%;
+  top: 0;
   background: var(--c-white);
   text-align: center;
+  height: 150px;
 }
 
 header .logo {
@@ -45,7 +49,17 @@ header .nav__list .nav__btn {
   display: block;
   color: var(--c-lightblack);
   font-size: 26px;
-  padding: 20px;
+  padding: 20px 10px 10px 10px;
+  margin-bottom: 10px;
+}
+
+header .nav__list .nav__btn:hover {
+  color: var(--c-lightblue);
+}
+
+header .nav__list .nav__btn--active {
+  color: var(--c-black);
+  border-bottom: solid thin var(--c-black);
 }
 
 header form {
@@ -73,6 +87,10 @@ header form > input[type="submit"] {
 
 header .trips-button {
   display: none;
+}
+
+main {
+  margin-top: 150px;
 }
 
 .hero {
@@ -109,6 +127,7 @@ article > .article-text {
   border: thin solid var(--c-lightblack);
   text-align: center;
   width: 95%;
+  max-width: 450px;
   margin: 0 auto;
 }
 

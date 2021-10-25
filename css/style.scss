@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+:root {
+    --c-black: #000000;
+    --c-lightblack: #504b4b;
+    --c-extralightgrey: #f6f5f5;
+    --c-white: #ffffff;
+    --c-darkblue: #3a5bc5;
+    --c-lightblue: #b6c5f6;
+}
+
+body {
+    background: var(--c-extralightgrey);
+}
+
+.container {
+    width: 100%;
+}
+
+header {
+    background: var(--c-white);
+    text-align: center;
+
+    .logo {
+        font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        color: var(--c-black);
+        font-size: 36px;
+        letter-spacing: 2px;
+
+        &-blue {
+            color: var(--c-darkblue);
+        }
+    }
+
+    .nav__list {
+        display: flex;
+        justify-content: space-around;
+
+        .nav__btn {
+            display: block;
+            color: var(--c-lightblack);
+            font-size: 26px;
+            padding: 20px;
+        }
+    }
+
+    form {
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        height: 25px;
+
+        > input[type="search"] {
+            width: 300px;
+            border-radius: 25px 0 0 25px;
+        }
+
+        > input[type="submit"] {
+            box-sizing: border-box;
+            border-radius: 0 25px 25px 0;
+            background-color: var(--c-lightblue);
+        }
+    }
+
+    .trips-button {
+        display: none;
+    }
+}
+
+.hero {
+    margin-top: 0;
+    width: 100%;
+    border: thin solid var(--c-lightblack);
+    text-align: center;
+    padding: 50px 0px;
+
+    &__title {
+        font-size: 15px;
+    }
+
+    &__subtitle {
+        color: var(--c-lightblack);
+        letter-spacing: 2px;
+        line-height: 20px;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+}
+
+article {
+    > .article-title {
+        font-weight: bold;
+        margin: 0 0 5px 5px;
+        font-size: 20px;
+    }
+
+    > .article-text {
+        margin-left: 5px;
+    }
+}
+
+.organiser-card {
+    border: thin solid var(--c-lightblack);
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+
+    &__title {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    &__image {
+        margin-bottom: 10px;
+        width: 200px;
+    }
+
+    &__text {
+        margin-bottom: 10px;
+    }
+}
+
+footer {
+    margin-top: 15px;
+    background: var(--c-darkblue);
+    text-align: center;
+
+    > p {
+        font-weight: bold;
+        font-size: 1em;
+        padding: 20px 0;
+    }
+}

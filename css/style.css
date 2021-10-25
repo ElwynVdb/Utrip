@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 :root {
-  --m-header: 9.375rem;
+  --m-mobile-header: 9.375rem;
+  --m-header: 5rem;
   --c-black: #000000;
   --c-lightblack: #504b4b;
   --c-extralightgrey: #f6f5f5;
@@ -23,7 +24,25 @@ header {
   top: 0;
   background: var(--c-white);
   text-align: center;
-  height: var(--m-header);
+  height: var(--m-mobile-header);
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    height: var(--m-header);
+    text-align: unset;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
 }
 
 header .logo {
@@ -38,6 +57,12 @@ header .logo-blue {
   color: var(--c-darkblue);
 }
 
+@media screen and (min-width: 768px) {
+  header .logo {
+    line-height: var(--m-header);
+  }
+}
+
 header .nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -46,12 +71,34 @@ header .nav__list {
       justify-content: space-around;
 }
 
+@media screen and (min-width: 768px) {
+  header .nav__list {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    line-height: var(--m-header);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header .nav__list__item {
+    line-height: var(--m-header);
+  }
+}
+
 header .nav__list .nav__btn {
   display: block;
   color: var(--c-lightblack);
   font-size: 1.625rem;
   padding: 1.25rem 0.625rem 0.625rem 0.625rem;
   margin-bottom: 0.625rem;
+}
+
+@media screen and (min-width: 768px) {
+  header .nav__list .nav__btn {
+    padding: 0 1.5rem;
+    margin: 0 auto;
+  }
 }
 
 header .nav__list .nav__btn:hover {
@@ -64,19 +111,32 @@ header .nav__list .nav__btn--active {
 }
 
 header form {
-  padding-bottom: 0.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 0.625rem;
   height: 1.56rem;
+}
+
+@media screen and (min-width: 768px) {
+  header form {
+    margin-top: calc((var(--m-header) / 2) - (1.56rem / 2));
+    line-height: var(--m-header);
+  }
 }
 
 header form > input[type="search"] {
   width: 18.75rem;
   border-radius: 1.56rem 0 0 1.56rem;
+}
+
+@media screen and (min-width: 768px) {
+  header form > input[type="search"] {
+    width: 7.75rem;
+  }
 }
 
 header form > input[type="submit"] {
@@ -91,7 +151,13 @@ header .trips-button {
 }
 
 main {
-  margin-top: var(--m-header);
+  margin-top: var(--m-mobile-header);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin-top: var(--m-header);
+  }
 }
 
 .hero {

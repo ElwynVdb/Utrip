@@ -92,26 +92,30 @@ header .nav__list > li {
 
 header .nav__list > li > ul.trip-dropdown {
   display: none;
+  line-height: 3rem;
+  padding: 0.625rem;
   position: absolute;
   background-color: var(--c-white);
   border: solid thin var(--c-black);
-  font-size: 1.5rem;
-  width: 14rem;
-  left: -3rem;
+  font-size: 1.2rem;
   text-align: center;
+  left: -3.5rem;
+  border-radius: 0 0 0.625rem 0.625rem;
+}
+
+header .nav__list > li > ul.trip-dropdown > li {
+  width: 12rem;
 }
 
 header .nav__list > li > ul.trip-dropdown > li a {
+  display: block;
   color: black;
-  padding: 0;
-}
-
-header .nav__list > li:hover > ul.trip-dropdown > li:hover {
-  background-color: var(--c-extralightgrey);
+  padding: 0.5rem 0.87rem;
 }
 
 header .nav__list > li:hover > ul.trip-dropdown > li a:hover {
   color: var(--c-darkblue);
+  background-color: var(--c-extralightgrey);
 }
 
 @media screen and (min-width: 1080px) {

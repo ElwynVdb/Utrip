@@ -89,30 +89,33 @@ header {
 
             > ul.trip-dropdown {
                 display: none;
+                line-height: 3rem;
+                padding: 0.625rem;
                 position: absolute;
                 background-color: var(--c-white);
                 border: solid thin var(--c-black);
-                font-size: 1.5rem;
-                width: 14rem;
-                left: -3rem;
+                font-size: 1.2rem;
                 text-align: center;
+                left: -3.5rem;
+                border-radius: 0 0 0.625rem 0.625rem;
+
+                > li {
+                    width: 12rem;
+                }
 
                 > li a {
+                    display: block;
                     color: black;
-                    padding: 0;
+                    padding: 0.5rem 0.87rem;
                 }
             }
 
             &:hover {
                 > ul.trip-dropdown {
-                
-                    > li:hover {
-                        background-color: var(--c-extralightgrey);
-                    }
-
-                    > li a  {
+                    > li a {
                         &:hover {
                             color: var(--c-darkblue);
+                            background-color: var(--c-extralightgrey);
                         }
                     }
 

@@ -48,7 +48,7 @@ body {
 }
 
 #main-header .logo {
-  font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+  font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: var(--c-black);
   font-size: 2.25rem;
@@ -176,19 +176,19 @@ body {
   }
 }
 
-#main-header form > input[type='search'] {
+#main-header form > input[type="search"] {
   width: 18.75rem;
   border-radius: 1.56rem 0 0 1.56rem;
   border-color: var(--c-black);
 }
 
 @media screen and (min-width: 800px) {
-  #main-header form > input[type='search'] {
+  #main-header form > input[type="search"] {
     width: 18.75rem;
   }
 }
 
-#main-header form > input[type='submit'] {
+#main-header form > input[type="submit"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 0 1.56rem 1.56rem 0;
@@ -225,7 +225,7 @@ body {
   #main .container-main {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'hero hero hero' 'main-content aside aside';
+        grid-template-areas: "hero hero hero" "main-content aside aside";
     width: 80%;
     margin: 0 auto;
   }
@@ -361,6 +361,51 @@ form .required-field {
   padding: 1.2rem 1.8rem;
   background-color: unset;
   text-transform: uppercase;
+}
+
+.container-trip .trip-card {
+  margin: 0 auto;
+  border: solid thin var(--c-lightblack);
+  text-align: center;
+  max-width: 450px;
+}
+
+.container-trip .trip-card__img {
+  width: 80%;
+  max-height: 500px;
+}
+
+.container-trip .trip-card__tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0.3rem 0;
+}
+
+.container-trip .trip-card__tags .card__tag {
+  display: inline-block;
+  padding: 0.3rem 1.5rem;
+  border: solid thin var(--c-lightblack);
+  border-radius: 15px;
+}
+
+.container-trip .trip-card__desc {
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 95%;
+}
+
+.container-trip .trip-card__btn {
+  display: inline-block;
+  text-transform: uppercase;
+  color: var(--c-black);
+  margin: 0.9rem 0 0.3rem 0;
+  padding: 0.5rem 2.5rem;
+  border: solid thin var(--c-lightblack);
+  border-radius: 15px;
 }
 
 /* Footer */

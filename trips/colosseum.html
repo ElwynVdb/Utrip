@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U-Trip | Historische Locaties</title>
+
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/reset.css ">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="container">
+            <a href="./index.html" class="logo">u-<span class="logo-blue">trip</span></a>
+
+            <nav>
+                <ul class="nav__list">
+                    <li><a href="/index.html" class="nav__btn">Home</a></li>
+                    <li><a href="/trip.html" class="nav__btn nav__btn--active">Trips</a>
+                        <ul class="trip-dropdown">
+                            <li><a href="/trips/stonehenge.html">Stonehenge</a></li>
+                            <li><a href="/trips/notre-dame.html">Notre-Dame</a></li>
+                            <li><a href="/trips/colosseum.html">Colosseum</a></li>
+                            <li><a href="/trips/eiffel-toren.html">Eiffel-Toren</a></li>
+                            <li><a href="/trips/dom-van-keulen.html">Dom van Keulen</a></li>
+                            <li><a href="/trips/schloss.html">Schloss Schönbrunn</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./contact.html" class="nav__btn">Contact</a></li>
+                </ul>
+            </nav>
+
+            <form>
+                <input type="search" placeholder=" Zoek...">
+                <input type="submit" value="Zoek">
+            </form>
+
+            <a href="./trip.html" class="trips-button"><button>Bezienswaardigheden</button></a>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="container-trip_information wrapper">
+            <section class="information">
+                <h1>Colosseum</h1>
+                <h3>Italië, Rome</h3>
+            </section>
+
+            <section class="trip-image">
+                <img src="/assets/images/colloseum.svg" alt="">
+            </section>
+
+            <section class="description">
+                <h1>Verken het oude Rome</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti recusandae reprehenderit placeat
+                    repellendus aperiam, magni necessitatibus perspiciatis minus tempora, maiores tempore ut repudiandae
+                    hic est facilis veniam deleniti quae sit.</p>
+            </section>
+
+            <section class="table">
+                <table>
+                    <thead>
+                        <th scope="col">Locatie</th>
+                        <th scope="col">x</th>
+                        <th scope="col">y</th>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Graden</th>
+                            <td>x</td>
+                            <td>y</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Geo</th>
+                            <td>x</td>
+                            <td>y</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="map">
+                <h1>Op de kaart:</h1>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.1228881313373!2d12.49004221573456!3d41.89021417263445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColosseum!5e0!3m2!1sen!2sbe!4v1636970488408!5m2!1sen!2sbe"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </section>
+
+            <section class="react">
+                <h1>Commentaar</h1>
+                <form action="">
+                    <label for="gebruikersnaam">Gebruikersnaam: <span class="required-field">*</span></label>
+
+                    <input type="text" name="gebruikersnaam" required>
+
+                    <label for="email">E-mail: <span class="required-field">*</span></label>
+
+                    <input type="email" name="email" required>
+
+                    <label for="bericht">Bericht <span class="required-field">*</span></label>
+
+                    <textarea name="bericht" cols="30" rows="10" required></textarea>
+
+                    <input type="submit" value="Plaats Commentaar">
+                </form>
+            </section>
+
+            <aside class="details">
+                <section class="list">
+                    <h1>Kenmerken:</h1>
+                    <ul>
+                        <li>Italië</li>
+                        <li>Rome</li>
+                        <li>1840</li>
+                    </ul>
+                </section>
+
+                <section class="likepanel">
+                    <a href="">Like</a>
+                    <p>1</p>
+                </section>
+            </aside>
+
+            <aside class="reactions">
+                <article class="message">
+                    <h2>Gebruiker: Tom | Geweldige Locatie!</h2>
+                    <p></p>
+                </article>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>Gemaakt door: Elwyn Van der Borght</p>
+    </footer>
+
+</body>
+
+</html>

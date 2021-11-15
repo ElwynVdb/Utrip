@@ -206,8 +206,15 @@ body {
 }
 
 .wrapper {
-  width: 80%;
   margin: 0 auto;
+
+  @include tablet() {
+    width: 80%;
+  }
+
+  @include desktop() {
+    width: 1024px;
+  }
 }
 
 .flex-container {
@@ -221,6 +228,10 @@ body {
   height: 100%;
 
   .container-main {
+    aside {
+      grid-area: aside;
+    }
+
     @include desktop() {
       display: grid;
       grid-template-areas:
@@ -229,9 +240,7 @@ body {
     }
   }
 
-  aside {
-    grid-area: aside;
-  }
+
 
   @include tablet() {
     margin-top: var(--m-header);
@@ -363,18 +372,20 @@ form .required-field {
   }
 }
 
+/* Trip Page */
+
 .container-trip {
   margin-top: 6rem;
   max-width: 1500px;
   margin-bottom: 4rem;
 
- .trip-title {
-   font-size: 4rem;
-   text-align: center;
-   padding: 2.5rem;
-   color: var(--c-lightblack);
-   font-style: italic;
- }
+  .trip-title {
+    font-size: 4rem;
+    text-align: center;
+    padding: 2.5rem;
+    color: var(--c-lightblack);
+    font-style: italic;
+  }
 
   .trip-cards {
     gap: 1.4rem;
@@ -387,7 +398,6 @@ form .required-field {
       border: solid 0.2rem var(--c-lightblack);
       text-align: center;
       max-width: 400px;
-     
 
       &__title {
         color: var(--c-lightblack);
@@ -433,6 +443,192 @@ form .required-field {
         font-weight: bold;
       }
     }
+  }
+}
+
+/* Trip Information Page */
+.container-trip_information {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  "information"
+  "trip-image"
+  "description"
+  "details"
+  "table"
+  "map"
+  "react"
+  "reactions";
+  row-gap: 0.9rem;
+
+  @include desktop() {
+    grid-template-areas: 
+    "information information ."
+    "trip-image details details"
+    "description details details"
+    "table table ."
+    "map map ."
+    "react react reactions"
+    "react react reactions";
+    column-gap: 0.9rem;
+  }
+
+  h1 {
+    margin-top: 0.7rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-style: italic;
+    color: var(--c-lightblack);
+    font-size: 0.9rem;
+  }
+
+  section {
+    h1 {
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  .information {
+    grid-area: information;
+    margin-top: 1rem;
+  }
+
+  .trip-image {
+    grid-area: trip-image;
+    img {
+      display: inline-block;
+      width: 99%;
+      border: solid 0.25rem var(--c-black);
+
+      @include desktop() {
+        width: 100%;
+        height: 560px;
+      }
+    }
+  }
+
+  .description {
+    grid-area: description;
+  }
+
+  .table {
+    grid-area: table;
+    table {
+      width: 100%;
+      border: thin solid var(--c-black);
+      border-collapse: collapse;
+
+      border-radius: 20px;
+
+      thead {
+        font-weight: bold;
+      }
+
+      th,
+      td {
+        padding: 0.5rem;
+        text-align: center;
+        border: 5px solid var(--c-lightblack);
+      }
+
+      
+      @include desktop() {
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .map {
+    grid-area: map;
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: solid thin var(--c-lightblack);
+    }
+  }
+
+  .react {
+    grid-area: react;
+    font-size: 1.5rem;
+
+    form {
+      
+      label {
+        display: block;
+        margin-top: 0.3rem;
+        margin-top: 0.9rem;
+      }
+
+      input {
+        width: 100%;
+        height: 30px;
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+      }
+
+      input[type="submit"] {
+    
+        display: block;
+        margin: 0.5rem auto;
+        height: 50px;
+        width: 80%;
+        border-radius: 0;
+        background-color: var(--c-white);
+      }
+    }
+  }
+
+  .details {
+    grid-area: details;
+     .list {
+      padding-bottom: 50px;
+      h1 {
+        text-align: center;
+      }
+       font-size: 1.4rem;
+       border: solid thin var(--c-black);
+       ul {
+         width: 80%;
+         margin: 0 auto;
+         list-style:disc;
+
+         li {
+           margin: 0 auto;
+           width: fit-content;
+         }
+       }
+     }
+
+     .likepanel {
+       margin-top: 0.3rem;
+       border: solid thin var(--c-black);
+       display: flex;
+       justify-content: space-around;
+
+       a, p {
+         border: solid thin var(--c-black);padding: 0.5rem;
+         margin: 0.5rem;
+         width: 30px;
+         text-align: center;
+         border-radius: 15px;
+       }
+
+       @include desktop() {
+         margin-top: 1rem;
+       }
+     }
+  }
+
+  .reactions {
+    grid-area: reactions;
   }
 }
 

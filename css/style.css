@@ -463,7 +463,9 @@ form .required-field {
 
 @media screen and (min-width: 1080px) {
   .container-trip_information {
-        grid-template-areas: "information information ." "trip-image details details" "description details details" "table table ." "map map ." "react react reactions" "react react reactions";
+    -ms-grid-columns: 0.8fr 0.3fr 0.3fr;
+        grid-template-columns: 0.8fr 0.3fr 0.3fr;
+        grid-template-areas: "information information ." "trip-image details ." "description details ." "table . ." "map . ." "react . reactions" "react . reactions";
     -webkit-column-gap: 0.9rem;
             column-gap: 0.9rem;
   }
@@ -496,19 +498,13 @@ form .required-field {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: trip-image;
+  width: 99%;
 }
 
 .container-trip_information .trip-image img {
   display: inline-block;
-  width: 99%;
+  width: 100%;
   border: solid 0.25rem var(--c-black);
-}
-
-@media screen and (min-width: 1080px) {
-  .container-trip_information .trip-image img {
-    width: 100%;
-    height: 560px;
-  }
 }
 
 .container-trip_information .description {
@@ -524,7 +520,6 @@ form .required-field {
 }
 
 .container-trip_information .table table {
-  width: 100%;
   border: thin solid var(--c-black);
   border-collapse: collapse;
   border-radius: 20px;
@@ -564,7 +559,6 @@ form .required-field {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: react;
-  font-size: 1.5rem;
 }
 
 .container-trip_information .react form label {
@@ -605,7 +599,7 @@ form .required-field {
 }
 
 .container-trip_information .details .list h1 {
-  text-align: center;
+  text-indent: 0.5rem;
 }
 
 .container-trip_information .details .list ul {
@@ -615,7 +609,6 @@ form .required-field {
 }
 
 .container-trip_information .details .list ul li {
-  margin: 0 auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

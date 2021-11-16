@@ -47,7 +47,7 @@ body {
   @include tablet() {
     display: flex;
     justify-content: space-evenly;
-    
+
     height: var(--m-header);
     text-align: unset;
   }
@@ -460,14 +460,15 @@ form .required-field {
   row-gap: 0.9rem;
 
   @include desktop() {
+    grid-template-columns: 0.8fr 0.3fr 0.3fr;
     grid-template-areas: 
     "information information ."
-    "trip-image details details"
-    "description details details"
-    "table table ."
-    "map map ."
-    "react react reactions"
-    "react react reactions";
+    "trip-image details ."
+    "description details ."
+    "table . ."
+    "map . ."
+    "react . reactions"
+    "react . reactions";
     column-gap: 0.9rem;
   }
 
@@ -496,15 +497,16 @@ form .required-field {
 
   .trip-image {
     grid-area: trip-image;
+    width: 99%;
+
+    @include desktop() {
+     
+    }
+
     img {
       display: inline-block;
-      width: 99%;
+      width: 100%;
       border: solid 0.25rem var(--c-black);
-
-      @include desktop() {
-        width: 100%;
-        height: 560px;
-      }
     }
   }
 
@@ -515,7 +517,7 @@ form .required-field {
   .table {
     grid-area: table;
     table {
-      width: 100%;
+
       border: thin solid var(--c-black);
       border-collapse: collapse;
 
@@ -551,7 +553,7 @@ form .required-field {
 
   .react {
     grid-area: react;
-    font-size: 1.5rem;
+
 
     form {
       
@@ -587,9 +589,11 @@ form .required-field {
     grid-area: details;
      .list {
       padding-bottom: 50px;
+  
       h1 {
-        text-align: center;
+        text-indent: 0.5rem;
       }
+       
        font-size: 1.4rem;
        border: solid thin var(--c-black);
        ul {
@@ -598,7 +602,6 @@ form .required-field {
          list-style:disc;
 
          li {
-           margin: 0 auto;
            width: fit-content;
          }
        }
@@ -626,6 +629,7 @@ form .required-field {
 
   .reactions {
     grid-area: reactions;
+  
   }
 }
 

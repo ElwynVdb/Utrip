@@ -520,6 +520,7 @@ form .required-field {
 }
 
 .container-trip_information .table table {
+  width: 100%;
   border: thin solid var(--c-black);
   border-collapse: collapse;
   border-radius: 20px;
@@ -568,12 +569,12 @@ form .required-field {
 }
 
 .container-trip_information .react form input {
-  width: 100%;
+  width: 99%;
   height: 30px;
 }
 
 .container-trip_information .react form textarea {
-  width: 100%;
+  width: 99%;
   resize: none;
 }
 
@@ -593,13 +594,22 @@ form .required-field {
 }
 
 .container-trip_information .details .list {
-  padding-bottom: 50px;
+  padding-bottom: 25px;
+  text-align: center;
   font-size: 1.4rem;
   border: solid thin var(--c-black);
 }
 
-.container-trip_information .details .list h1 {
-  text-indent: 0.5rem;
+@media screen and (min-width: 1080px) {
+  .container-trip_information .details .list {
+    text-align: unset;
+  }
+  .container-trip_information .details .list h1 {
+    text-indent: 0.5rem;
+  }
+  .container-trip_information .details .list::before {
+    text-indent: 0.5rem;
+  }
 }
 
 .container-trip_information .details .list ul {
@@ -609,9 +619,16 @@ form .required-field {
 }
 
 .container-trip_information .details .list ul li {
+  margin: 0 auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+@media screen and (min-width: 1080px) {
+  .container-trip_information .details .list ul li {
+    margin: 0;
+  }
 }
 
 .container-trip_information .details .likepanel {

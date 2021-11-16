@@ -42,8 +42,6 @@ body {
   text-align: center;
   height: var(--m-mobile-header);
 
- 
-
   @include tablet() {
     display: flex;
     justify-content: space-evenly;
@@ -517,7 +515,7 @@ form .required-field {
   .table {
     grid-area: table;
     table {
-
+      width: 100%;
       border: thin solid var(--c-black);
       border-collapse: collapse;
 
@@ -564,12 +562,12 @@ form .required-field {
       }
 
       input {
-        width: 100%;
+        width: 99%;
         height: 30px;
       }
 
       textarea {
-        width: 100%;
+        width: 99%;
         resize: none;
       }
 
@@ -588,12 +586,23 @@ form .required-field {
   .details {
     grid-area: details;
      .list {
-      padding-bottom: 50px;
-  
-      h1 {
-        text-indent: 0.5rem;
-      }
-       
+      padding-bottom: 25px;
+
+      text-align: center;
+      
+
+       @include desktop() {
+        h1 {
+          text-indent: 0.5rem;
+        }
+    
+        &::before {
+          text-indent: 0.5rem;
+        }
+
+        text-align: unset;
+       }
+        
        font-size: 1.4rem;
        border: solid thin var(--c-black);
        ul {
@@ -602,7 +611,12 @@ form .required-field {
          list-style:disc;
 
          li {
+           margin: 0 auto;
            width: fit-content;
+
+           @include desktop() {
+             margin: 0;
+           }
          }
        }
      }

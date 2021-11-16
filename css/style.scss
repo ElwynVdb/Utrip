@@ -42,19 +42,16 @@ body {
   text-align: center;
   height: var(--m-mobile-header);
 
+ 
+
   @include tablet() {
+    display: flex;
+    justify-content: space-evenly;
+    
     height: var(--m-header);
     text-align: unset;
   }
 
-  .container {
-    width: 100%;
-
-    @include tablet() {
-      display: flex;
-      justify-content: space-evenly;
-    }
-  }
 
   .logo {
     font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
@@ -213,7 +210,7 @@ body {
   }
 
   @include desktop() {
-    width: 1024px;
+    width: 1360px;
   }
 }
 

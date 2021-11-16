@@ -27,23 +27,14 @@ body {
 
 @media screen and (min-width: 800px) {
   #main-header {
-    height: var(--m-header);
-    text-align: unset;
-  }
-}
-
-#main-header .container {
-  width: 100%;
-}
-
-@media screen and (min-width: 800px) {
-  #main-header .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    height: var(--m-header);
+    text-align: unset;
   }
 }
 
@@ -227,7 +218,7 @@ body {
 
 @media screen and (min-width: 1080px) {
   .wrapper {
-    width: 1024px;
+    width: 1360px;
   }
 }
 

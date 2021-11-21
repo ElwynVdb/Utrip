@@ -218,7 +218,7 @@ body {
 
 @media screen and (min-width: 1080px) {
   .wrapper {
-    width: 1360px;
+    width: 1080px;
   }
 }
 
@@ -376,9 +376,8 @@ form .required-field {
 
 /* Trip Page */
 .container-trip {
-  margin-top: 6rem;
   max-width: 1500px;
-  margin-bottom: 4rem;
+  margin: 6rem auto 4rem auto;
 }
 
 .container-trip .trip-title {
@@ -390,14 +389,16 @@ form .required-field {
 }
 
 .container-trip .trip-cards {
-  gap: 1.4rem;
+  gap: 1rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container-trip .trip-cards .trip-card {
   display: inline-block;
-  margin: 0 auto;
   border: solid 0.2rem var(--c-lightblack);
   text-align: center;
   max-width: 400px;

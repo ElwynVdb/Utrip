@@ -208,7 +208,7 @@ body {
   }
 
   @include desktop() {
-    width: 1360px;
+    width: 1080px;
   }
 }
 
@@ -370,9 +370,8 @@ form .required-field {
 /* Trip Page */
 
 .container-trip {
-  margin-top: 6rem;
   max-width: 1500px;
-  margin-bottom: 4rem;
+  margin: 6rem auto 4rem auto;
 
   .trip-title {
     font-size: 4rem;
@@ -383,12 +382,13 @@ form .required-field {
   }
 
   .trip-cards {
-    gap: 1.4rem;
+    gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
 
     .trip-card {
       display: inline-block;
-      margin: 0 auto;
+     
 
       border: solid 0.2rem var(--c-lightblack);
       text-align: center;

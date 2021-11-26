@@ -208,33 +208,13 @@ header .elwyn-trips__btn > button {
   text-transform: uppercase;
 }
 
-/* REMOVE */
-.flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 /* Main Content */
 main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: main;
-  height: 100%;
   margin: var(--m-mobile-header) auto 0 auto;
-}
-
-main .elwyn-home_container aside {
-  grid-area: aside;
-}
-
-@media screen and (min-width: 1080px) {
-  main .elwyn-home_container {
-    display: -ms-grid;
-    display: grid;
-        grid-template-areas: "hero hero hero" "main-content aside aside";
-  }
 }
 
 @media screen and (min-width: 800px) {
@@ -254,31 +234,6 @@ main .elwyn-main_content {
   grid-area: main-content;
 }
 
-.elwyn-hero {
-  width: 100%;
-  border: thin solid var(--c-lightblack);
-  text-align: center;
-  padding: 3.12rem 0;
-}
-
-.elwyn-hero h1 {
-  font-size: 0.9375rem;
-}
-
-.elwyn-hero h2 {
-  color: var(--c-lightblack);
-  letter-spacing: 0.125rem;
-  line-height: 1.25rem;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-}
-
-@media screen and (min-width: 1080px) {
-  .elwyn-hero {
-    grid-area: hero;
-  }
-}
-
 article > h2 {
   font-weight: bold;
   margin: 0 0 0.3125rem 0.3125rem;
@@ -289,7 +244,41 @@ article > p {
   margin-left: 0.3125rem;
 }
 
-.elwyn-organiser_card {
+form .elwyn-required_field {
+  color: red;
+}
+
+/*Home Page*/
+.elwyn-home_container aside {
+  grid-area: aside;
+}
+
+.elwyn-home_container .elwyn-hero {
+  width: 100%;
+  border: thin solid var(--c-lightblack);
+  text-align: center;
+  padding: 3.12rem 0;
+}
+
+.elwyn-home_container .elwyn-hero h1 {
+  font-size: 0.9375rem;
+}
+
+.elwyn-home_container .elwyn-hero h2 {
+  color: var(--c-lightblack);
+  letter-spacing: 0.125rem;
+  line-height: 1.25rem;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1080px) {
+  .elwyn-home_container .elwyn-hero {
+    grid-area: hero;
+  }
+}
+
+.elwyn-home_container .elwyn-organiser_card {
   border: thin solid var(--c-lightblack);
   text-align: center;
   width: 95%;
@@ -300,84 +289,35 @@ article > p {
   padding: 0.3rem 0;
 }
 
-.elwyn-organiser_card h1 {
+.elwyn-home_container .elwyn-organiser_card h1 {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 2.1875rem;
   margin-bottom: 0.625rem;
 }
 
-.elwyn-organiser_card img {
+.elwyn-home_container .elwyn-organiser_card img {
   margin-bottom: 0.625rem;
   width: 12.5rem;
 }
 
-.elwyn-organiser_card p {
+.elwyn-home_container .elwyn-organiser_card p {
   margin-bottom: 0.625rem;
   width: 90%;
   margin: 0 auto;
 }
 
-form .elwyn-required_field {
-  color: red;
-}
-
-/* Contact Page */
-.container-contact {
-  width: 100%;
-  max-width: 748px;
-  margin: 0 auto;
-}
-
-.container-contact .contact header {
-  background-color: lightgray;
-  border: var(--c-black) thin solid;
-  padding: 1.6rem;
-  line-height: 1.5rem;
-}
-
-.container-contact .contact header h1 {
-  font-size: 1.5rem;
-}
-
-.container-contact .contact header p {
-  font-style: italic;
-  font-size: 0.8rem;
-}
-
-@media screen and (min-width: 800px) {
-  .container-contact .contact header p {
-    font-size: 1.2rem;
+@media screen and (min-width: 1080px) {
+  .elwyn-home_container {
+    display: -ms-grid;
+    display: grid;
+    max-width: 1080px;
+        grid-template-areas: "hero hero hero" "main-content aside aside";
   }
 }
 
-.container-contact .contact main {
-  margin: 0.3rem 0 0 0.3rem;
-}
-
-.container-contact .contact main .contact-form input,
-.container-contact .contact main .contact-form textarea {
-  margin: 0.3rem 0;
-  width: 97%;
-  resize: none;
-}
-
-.container-contact .contact main .contact-form input:last-child {
-  display: block;
-  width: unset;
-  margin: 0 auto;
-  padding: 1.2rem 1.8rem;
-  background-color: unset;
-  text-transform: uppercase;
-}
-
 /* Trip Page */
-.container-trip {
-  max-width: 1500px;
-  margin: 6rem auto 4rem auto;
-}
-
-.container-trip .trip-title {
+.elwyn-trip_container h1 {
   font-size: 4rem;
   text-align: center;
   padding: 2.5rem;
@@ -385,7 +325,10 @@ form .elwyn-required_field {
   font-style: italic;
 }
 
-.container-trip .trip-cards {
+.elwyn-trip_container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   gap: 1rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -394,26 +337,26 @@ form .elwyn-required_field {
           justify-content: center;
 }
 
-.container-trip .trip-cards .trip-card {
+.elwyn-trip_container section article {
   display: inline-block;
   border: solid 0.2rem var(--c-lightblack);
   text-align: center;
   max-width: 400px;
 }
 
-.container-trip .trip-cards .trip-card__title {
+.elwyn-trip_container section article h2 {
   color: var(--c-lightblack);
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
 }
 
-.container-trip .trip-cards .trip-card__img {
+.elwyn-trip_container section article img {
   width: 80%;
   max-height: 400px;
   border: 0.15rem solid var(--c-lightblack);
 }
 
-.container-trip .trip-cards .trip-card__tags {
+.elwyn-trip_container section article .elwyn-trip_card-tags {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -423,7 +366,7 @@ form .elwyn-required_field {
   margin: 0.3rem 0;
 }
 
-.container-trip .trip-cards .trip-card__tags .card__tag {
+.elwyn-trip_container section article .elwyn-trip_card-tags a {
   display: inline-block;
   padding: 0.3rem 1.5rem;
   border: solid thin var(--c-lightblack);
@@ -432,13 +375,13 @@ form .elwyn-required_field {
   font-weight: bold;
 }
 
-.container-trip .trip-cards .trip-card__desc {
+.elwyn-trip_container section article p {
   margin: 0 auto;
   margin-top: 1rem;
   width: 95%;
 }
 
-.container-trip .trip-cards .trip-card__btn {
+.elwyn-trip_container section article .elwyn-trip_card-button {
   display: inline-block;
   text-transform: uppercase;
   color: var(--c-black);
@@ -449,10 +392,56 @@ form .elwyn-required_field {
   font-weight: bold;
 }
 
-/* Trip Information Page */
-.container-trip_information {
-  width: 90%;
+/* Contact Page */
+.elwyn-contact_container {
+  width: 100%;
+  max-width: 748px;
+}
+
+.elwyn-contact_container article:nth-of-type(1) {
+  background-color: lightgray;
+  border: var(--c-black) thin solid;
+  padding: 1.6rem;
+  line-height: 1.5rem;
+}
+
+.elwyn-contact_container article:nth-of-type(1) h1 {
+  font-size: 1.5rem;
+}
+
+.elwyn-contact_container article:nth-of-type(1) p {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 800px) {
+  .elwyn-contact_container article:nth-of-type(1) p {
+    font-size: 1.2rem;
+  }
+}
+
+.elwyn-contact_container article:nth-of-type(2) {
+  margin: 0.3rem 0 0 0.3rem;
+}
+
+.elwyn-contact_container article:nth-of-type(2) form input,
+.elwyn-contact_container article:nth-of-type(2) form textarea {
+  margin: 0.3rem 0;
+  width: 97%;
+  resize: none;
+}
+
+.elwyn-contact_container article:nth-of-type(2) form input:last-child {
+  display: block;
+  width: unset;
   margin: 0 auto;
+  padding: 1.2rem 1.8rem;
+  background-color: unset;
+  text-transform: uppercase;
+}
+
+/* Trip Information Page */
+.elwyn-trip_info-container {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "information" "trip-image" "description" "details" "table" "map" "react" "reactions";
@@ -460,123 +449,125 @@ form .elwyn-required_field {
 }
 
 @media screen and (min-width: 1080px) {
-  .container-trip_information {
+  .elwyn-trip_info-container {
     -ms-grid-columns: 0.8fr 0.3fr 0.3fr;
         grid-template-columns: 0.8fr 0.3fr 0.3fr;
-        grid-template-areas: "information information ." "trip-image details ." "description details ." "table . ." "map . ." "react . reactions" "react . reactions";
-    -webkit-column-gap: 0.9rem;
-            column-gap: 0.9rem;
+        grid-template-areas: "information information ." "trip-image details ." "description details ." "table . ." "map . ." "react reactions reactions" "react reactions reactions";
+    -webkit-column-gap: 1.9rem;
+            column-gap: 1.9rem;
   }
 }
 
-.container-trip_information h1 {
+.elwyn-trip_info-container h1 {
   margin-top: 0.7rem;
   font-weight: bold;
   font-size: 1.3rem;
 }
 
-.container-trip_information h3 {
+.elwyn-trip_info-container h3 {
   font-style: italic;
   color: var(--c-lightblack);
   font-size: 0.9rem;
 }
 
-.container-trip_information section h1 {
+.elwyn-trip_info-container section h1 {
   margin-bottom: 0.3rem;
 }
 
-.container-trip_information .information {
+.elwyn-trip_info-container section:nth-of-type(1) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: information;
   margin-top: 1rem;
 }
 
-.container-trip_information .trip-image {
+.elwyn-trip_info-container section:nth-of-type(2) {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: trip-image;
-  width: 99%;
+  max-width: 798.3px;
+  max-height: 558.8px;
 }
 
-.container-trip_information .trip-image img {
+.elwyn-trip_info-container section:nth-of-type(2) img {
   display: inline-block;
   width: 100%;
+  height: 100%;
   border: solid 0.25rem var(--c-black);
 }
 
-.container-trip_information .description {
+.elwyn-trip_info-container section:nth-of-type(3) {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: description;
 }
 
-.container-trip_information .table {
+.elwyn-trip_info-container section:nth-of-type(4) {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: table;
 }
 
-.container-trip_information .table table {
+.elwyn-trip_info-container section:nth-of-type(4) table {
   width: 100%;
   border: thin solid var(--c-black);
   border-collapse: collapse;
   border-radius: 20px;
 }
 
-.container-trip_information .table table thead {
+.elwyn-trip_info-container section:nth-of-type(4) table thead {
   font-weight: bold;
 }
 
-.container-trip_information .table table th,
-.container-trip_information .table table td {
+.elwyn-trip_info-container section:nth-of-type(4) table th,
+.elwyn-trip_info-container section:nth-of-type(4) table td {
   padding: 0.5rem;
   text-align: center;
   border: 5px solid var(--c-lightblack);
 }
 
 @media screen and (min-width: 1080px) {
-  .container-trip_information .table table {
+  .elwyn-trip_info-container section:nth-of-type(4) table {
     width: 60%;
     margin: 0 auto;
   }
 }
 
-.container-trip_information .map {
+.elwyn-trip_info-container section:nth-of-type(5) {
   -ms-grid-row: 6;
   -ms-grid-column: 1;
   grid-area: map;
 }
 
-.container-trip_information .map iframe {
+.elwyn-trip_info-container section:nth-of-type(5) iframe {
   width: 100%;
   height: 400px;
   border: solid thin var(--c-lightblack);
 }
 
-.container-trip_information .react {
+.elwyn-trip_info-container section:nth-of-type(6) {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: react;
 }
 
-.container-trip_information .react form label {
+.elwyn-trip_info-container section:nth-of-type(6) form label {
   display: block;
   margin-top: 0.3rem;
   margin-top: 0.9rem;
 }
 
-.container-trip_information .react form input {
+.elwyn-trip_info-container section:nth-of-type(6) form input {
   width: 99%;
   height: 30px;
 }
 
-.container-trip_information .react form textarea {
+.elwyn-trip_info-container section:nth-of-type(6) form textarea {
   width: 99%;
   resize: none;
 }
 
-.container-trip_information .react form input[type="submit"] {
+.elwyn-trip_info-container section:nth-of-type(6) form input[type="submit"] {
   display: block;
   margin: 0.5rem auto;
   height: 50px;
@@ -585,13 +576,13 @@ form .elwyn-required_field {
   background-color: var(--c-white);
 }
 
-.container-trip_information .details {
+.elwyn-trip_info-container .elwyn-details {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: details;
 }
 
-.container-trip_information .details .list {
+.elwyn-trip_info-container .elwyn-details .elwyn-list {
   padding-bottom: 25px;
   text-align: center;
   font-size: 1.4rem;
@@ -599,24 +590,24 @@ form .elwyn-required_field {
 }
 
 @media screen and (min-width: 1080px) {
-  .container-trip_information .details .list {
+  .elwyn-trip_info-container .elwyn-details .elwyn-list {
     text-align: unset;
   }
-  .container-trip_information .details .list h1 {
+  .elwyn-trip_info-container .elwyn-details .elwyn-list h1 {
     text-indent: 0.5rem;
   }
-  .container-trip_information .details .list::before {
+  .elwyn-trip_info-container .elwyn-details .elwyn-list::before {
     text-indent: 0.5rem;
   }
 }
 
-.container-trip_information .details .list ul {
+.elwyn-trip_info-container .elwyn-details .elwyn-list ul {
   width: 80%;
   margin: 0 auto;
   list-style: disc;
 }
 
-.container-trip_information .details .list ul li {
+.elwyn-trip_info-container .elwyn-details .elwyn-list ul li {
   margin: 0 auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -624,12 +615,12 @@ form .elwyn-required_field {
 }
 
 @media screen and (min-width: 1080px) {
-  .container-trip_information .details .list ul li {
+  .elwyn-trip_info-container .elwyn-details .elwyn-list ul li {
     margin: 0;
   }
 }
 
-.container-trip_information .details .likepanel {
+.elwyn-trip_info-container .elwyn-details .elwyn-likepanel {
   margin-top: 0.3rem;
   border: solid thin var(--c-black);
   display: -webkit-box;
@@ -639,8 +630,8 @@ form .elwyn-required_field {
       justify-content: space-around;
 }
 
-.container-trip_information .details .likepanel a,
-.container-trip_information .details .likepanel p {
+.elwyn-trip_info-container .elwyn-details .elwyn-likepanel a,
+.elwyn-trip_info-container .elwyn-details .elwyn-likepanel p {
   border: solid thin var(--c-black);
   padding: 0.5rem;
   margin: 0.5rem;
@@ -650,15 +641,36 @@ form .elwyn-required_field {
 }
 
 @media screen and (min-width: 1080px) {
-  .container-trip_information .details .likepanel {
+  .elwyn-trip_info-container .elwyn-details .elwyn-likepanel {
     margin-top: 1rem;
   }
 }
 
-.container-trip_information .reactions {
+.elwyn-trip_info-container .elwyn-reactions {
   -ms-grid-row: 8;
   -ms-grid-column: 1;
   grid-area: reactions;
+}
+
+.elwyn-trip_info-container .elwyn-reactions article section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: solid thin var(--c-black);
+}
+
+.elwyn-trip_info-container .elwyn-reactions article section img {
+  width: 40px;
+}
+
+.elwyn-trip_info-container .elwyn-reactions article section h2 {
+  font-weight: bold;
+  line-height: 40px;
+  margin-left: 0.3rem;
+}
+
+.elwyn-trip_info-container .elwyn-reactions article p {
+  margin-top: 0.5rem;
 }
 
 /* Footer */

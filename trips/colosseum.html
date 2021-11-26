@@ -13,124 +13,126 @@
 </head>
 
 <body>
-    <header id="main-header">
-            <a href="./index.html" class="logo">u-<span class="logo-blue">trip</span></a>
+    <header>
+        <a href="/index.html" class="elwyn-logo">u-<span class="elwyn-logo-blue">trip</span></a>
 
-            <nav>
-                <ul class="nav__list">
-                    <li><a href="/index.html" class="nav__btn">Home</a></li>
-                    <li><a href="/trip.html" class="nav__btn nav__btn--active">Trips</a>
-                        <ul class="trip-dropdown">
-                            <li><a href="/trips/stonehenge.html">Stonehenge</a></li>
-                            <li><a href="/trips/notre-dame.html">Notre-Dame</a></li>
-                            <li><a href="/trips/colosseum.html">Colosseum</a></li>
-                            <li><a href="/trips/eiffel-toren.html">Eiffel-Toren</a></li>
-                            <li><a href="/trips/dom-van-keulen.html">Dom van Keulen</a></li>
-                            <li><a href="/trips/schloss.html">Schloss Schönbrunn</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./contact.html" class="nav__btn">Contact</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/trip.html" class="elwyn-nav__btn--active">Trips</a>
+                    <ul>
+                        <li><a href="/trips/stonehenge.html">Stonehenge</a></li>
+                        <li><a href="/trips/notre-dame.html">Notre-Dame</a></li>
+                        <li><a href="/trips/colosseum.html">Colosseum</a></li>
+                        <li><a href="/trips/eiffel-toren.html">Eiffel-Toren</a></li>
+                        <li><a href="/trips/dom-van-keulen.html">Dom van Keulen</a></li>
+                        <li><a href="/trips/schloss.html">Schloss Schönbrunn</a></li>
+                    </ul>
+                </li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-            <form>
-                <input type="search" placeholder=" Zoek...">
-                <input type="submit" value="Zoek">
-            </form>
+        <form>
+            <input type="search" placeholder=" Zoek...">
+            <input type="submit" value="Zoek">
+        </form>
 
-            <a href="./trip.html" class="trips-button"><button>Bezienswaardigheden</button></a>
+        <a href="./trip.html" class="elwyn-trips__btn"><button>Bezienswaardigheden</button></a>
     </header>
 
-    <main id="main">
-        <div class="container-trip_information wrapper">
-            <section class="information">
-                <h1>Colosseum</h1>
-                <h3>Italië, Rome</h3>
+    <main class="elwyn-trip_info-container">
+
+        <section>
+            <h1>Colosseum</h1>
+            <h3>Italië, Rome</h3>
+        </section>
+
+        <section>
+            <img src="/assets/images/colloseum-inside.svg" alt="colloseum-inside">
+        </section>
+
+        <section>
+            <h1>Verken het oude Rome</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti recusandae reprehenderit placeat
+                repellendus aperiam, magni necessitatibus perspiciatis minus tempora, maiores tempore ut repudiandae
+                hic est facilis veniam deleniti quae sit.</p>
+        </section>
+
+        <section>
+            <table>
+                <thead>
+                    <th scope="col">Locatie</th>
+                    <th scope="col">x</th>
+                    <th scope="col">y</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Graden</th>
+                        <td>x</td>
+                        <td>y</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Geo</th>
+                        <td>x</td>
+                        <td>y</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h1>Op de kaart: (Tijdelijk tot leaflet)</h1>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.1228881313373!2d12.49004221573456!3d41.89021417263445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColosseum!5e0!3m2!1sen!2sbe!4v1636970488408!5m2!1sen!2sbe"
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <section>
+            <h1>Commentaar</h1>
+            <form action="">
+                <label for="gebruikersnaam">Gebruikersnaam: <span class="required-field">*</span></label>
+
+                <input type="text" name="gebruikersnaam" required>
+
+                <label for="email">E-mail: <span class="required-field">*</span></label>
+
+                <input type="email" name="email" required>
+
+                <label for="bericht">Bericht <span class="required-field">*</span></label>
+
+                <textarea name="bericht" cols="30" rows="10" required></textarea>
+
+                <input type="submit" value="Plaats Commentaar">
+            </form>
+        </section>
+
+        <aside class="elwyn-details">
+            <section class="elwyn-list">
+                <h1>Kenmerken:</h1>
+                <ul>
+                    <li>Italië</li>
+                    <li>Rome</li>
+                    <li>Bouw: 70 - 80 n. Chr</li>
+                </ul>
             </section>
 
-            <section class="trip-image">
-                <img src="/assets/images/colloseum.svg" alt="">
+            <section class="elwyn-likepanel">
+                <a href="">Like</a>
+                <p>1</p>
             </section>
+        </aside>
 
-            <section class="description">
-                <h1>Verken het oude Rome</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti recusandae reprehenderit placeat
-                    repellendus aperiam, magni necessitatibus perspiciatis minus tempora, maiores tempore ut repudiandae
-                    hic est facilis veniam deleniti quae sit.</p>
-            </section>
-
-            <section class="table">
-                <table>
-                    <thead>
-                        <th scope="col">Locatie</th>
-                        <th scope="col">x</th>
-                        <th scope="col">y</th>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">Graden</th>
-                            <td>x</td>
-                            <td>y</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Geo</th>
-                            <td>x</td>
-                            <td>y</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="map">
-                <h1>Op de kaart:</h1>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.1228881313373!2d12.49004221573456!3d41.89021417263445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColosseum!5e0!3m2!1sen!2sbe!4v1636970488408!5m2!1sen!2sbe"
-                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </section>
-
-            <section class="react">
-                <h1>Commentaar</h1>
-                <form action="">
-                    <label for="gebruikersnaam">Gebruikersnaam: <span class="required-field">*</span></label>
-
-                    <input type="text" name="gebruikersnaam" required>
-
-                    <label for="email">E-mail: <span class="required-field">*</span></label>
-
-                    <input type="email" name="email" required>
-
-                    <label for="bericht">Bericht <span class="required-field">*</span></label>
-
-                    <textarea name="bericht" cols="30" rows="10" required></textarea>
-
-                    <input type="submit" value="Plaats Commentaar">
-                </form>
-            </section>
-
-            <aside class="details">
-                <section class="list">
-                    <h1>Kenmerken:</h1>
-                    <ul>
-                        <li>Italië</li>
-                        <li>Rome</li>
-                        <li>1840</li>
-                    </ul>
-                </section>
-
-                <section class="likepanel">
-                    <a href="">Like</a>
-                    <p>1</p>
-                </section>
-            </aside>
-
-            <aside class="reactions">
-                <article class="message">
-                    <h2>Gebruiker: Tom | Geweldige Locatie!</h2>
-                    <p></p>
-                </article>
-            </aside>
-        </div>
+        <aside class="elwyn-reactions">
+            <article>
+                 <section>
+                    <img src="../assets/images/account.jpg" alt="acc">
+                    <h2>Tom | Geweldige Locatie!</h2>
+                 </section>
+                 <p>Het is een prachtige locatie als je van de historiek houdt!</p>
+            </article>
+        </aside>
     </main>
 
     <footer>

@@ -31,27 +31,37 @@ $desktop-width: 1080px;
 /* Mains & Headers */
 
 body {
+  display: grid;
+  grid-template-areas: 
+  "header header header"
+  "main main main"
+  "footer footer footer";
+
   background: var(--c-extralightgrey);
 }
 
-#main-header {
+header {
+  grid-area: header;
   position: fixed;
-  width: 100%;
   top: 0;
+
   background: var(--c-white);
   text-align: center;
+
+  width: 100%;
   height: var(--m-mobile-header);
 
   @include tablet() {
     display: flex;
     justify-content: space-evenly;
 
-    height: var(--m-header);
     text-align: unset;
+
+    height: var(--m-header);
+    line-height: var(--m-header);
   }
 
-
-  .logo {
+  .elwyn-logo {
     font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     color: var(--c-black);
@@ -60,14 +70,10 @@ body {
 
     &-blue {
       color: var(--c-darkblue);
-    }
-
-    @include tablet() {
-      line-height: var(--m-header);
-    }
+    }  
   }
 
-  .nav__list {
+  nav ul {
     display: flex;
     justify-content: space-around;
 
@@ -85,7 +91,7 @@ body {
     > li {
       position: relative;
 
-      > ul.trip-dropdown {
+      > ul {
         display: none;
         line-height: 3rem;
         padding: 0.625rem;
@@ -109,7 +115,7 @@ body {
       }
 
       &:hover {
-        > ul.trip-dropdown {
+        > ul {
           > li a {
             &:hover {
               color: var(--c-darkblue);
@@ -122,25 +128,25 @@ body {
           }
         }
       }
-    }
 
-    .nav__btn {
-      display: block;
-      color: var(--c-lightblack);
-      font-size: 1.625rem;
-      padding: 1.25rem 0.625rem 0.625rem 0.625rem;
-      margin-bottom: 0.625rem;
-
-      @include tablet() {
-        padding: 0 1.5rem;
-        margin: 0 auto;
+      a {
+        display: block;
+        color: var(--c-lightblack);
+        font-size: 1.625rem;
+        padding: 1.25rem 0.625rem 0.625rem 0.625rem;
+        margin-bottom: 0.625rem;
+  
+        @include tablet() {
+          padding: 0 1.5rem;
+          margin: 0 auto;
+        }
+  
+        &:hover {
+          color: var(--c-lightblue);
+        }
       }
 
-      &:hover {
-        color: var(--c-lightblue);
-      }
-
-      &--active {
+      .elwyn-nav__btn--active {
         color: var(--c-black);
         border-bottom: solid thin var(--c-black);
 
@@ -182,7 +188,7 @@ body {
     }
   }
 
-  .trips-button {
+  .elwyn-trips__btn {
     display: none;
 
     @include desktop() {
@@ -200,29 +206,19 @@ body {
   }
 }
 
-.wrapper {
-  margin: 0 auto;
-
-  @include tablet() {
-    width: 80%;
-  }
-
-  @include desktop() {
-    width: 1080px;
-  }
-}
-
+/* REMOVE */
 .flex-container {
   display: flex;
 }
 
 /* Main Content */
-
-#main {
-  margin-top: var(--m-mobile-header);
+main {
+  grid-area: main;
   height: 100%;
+  margin: var(--m-mobile-header) auto 0 auto;
 
-  .container-main {
+  .elwyn-home_container {
+
     aside {
       grid-area: aside;
     }
@@ -235,28 +231,31 @@ body {
     }
   }
 
-
-
   @include tablet() {
+    width: 80%;
     margin-top: var(--m-header);
   }
 
-  .main-content {
+  @include desktop() {
+    width: 1080px;
+  }
+
+  .elwyn-main_content {
     grid-area: main-content;
   }
 }
 
-.hero {
+.elwyn-hero {
   width: 100%;
   border: thin solid var(--c-lightblack);
   text-align: center;
   padding: 3.12rem 0;
 
-  &__title {
+  h1 {
     font-size: 0.9375rem;
   }
 
-  &__subtitle {
+  h2 {
     color: var(--c-lightblack);
     letter-spacing: 0.125rem;
     line-height: 1.25rem;
@@ -271,53 +270,51 @@ body {
 
 // Default styling for all articles
 article {
-  .main-article {
-    grid-area: main-article;
-  }
-
-  > .article-title {
+  > h2 {
     font-weight: bold;
     margin: 0 0 0.3125rem 0.3125rem;
     font-size: 1.25rem;
   }
 
-  > .article-text {
+  > p {
     margin-left: 0.3125rem;
   }
 }
 
 // Index Page Card
-.organiser-card {
+.elwyn-organiser_card {
   border: thin solid var(--c-lightblack);
   text-align: center;
   width: 95%;
   max-width: 28.12rem;
   margin: 0.5rem auto;
   box-shadow: 0.625rem 0.75rem 0.5rem rgba(0, 0, 0, 0.5);
+  padding: 0.3rem 0;
 
-  &__title {
+  h1 {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 2.1875rem;
     margin-bottom: 0.625rem;
   }
 
-  &__image {
+  img {
     margin-bottom: 0.625rem;
     width: 12.5rem;
   }
 
-  &__text {
+  p {
     margin-bottom: 0.625rem;
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
-form .required-field {
+form .elwyn-required_field {
   color: red;
 }
 
 /* Contact Page */
-
 .container-contact {
   width: 100%;
   max-width: 748px;
@@ -333,6 +330,7 @@ form .required-field {
       h1 {
         font-size: 1.5rem;
       }
+      
       p {
         font-style: italic;
         font-size: 0.8rem;
@@ -388,7 +386,6 @@ form .required-field {
 
     .trip-card {
       display: inline-block;
-     
 
       border: solid 0.2rem var(--c-lightblack);
       text-align: center;
@@ -446,27 +443,27 @@ form .required-field {
   width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-areas: 
-  "information"
-  "trip-image"
-  "description"
-  "details"
-  "table"
-  "map"
-  "react"
-  "reactions";
+  grid-template-areas:
+    "information"
+    "trip-image"
+    "description"
+    "details"
+    "table"
+    "map"
+    "react"
+    "reactions";
   row-gap: 0.9rem;
 
   @include desktop() {
     grid-template-columns: 0.8fr 0.3fr 0.3fr;
-    grid-template-areas: 
-    "information information ."
-    "trip-image details ."
-    "description details ."
-    "table . ."
-    "map . ."
-    "react . reactions"
-    "react . reactions";
+    grid-template-areas:
+      "information information ."
+      "trip-image details ."
+      "description details ."
+      "table . ."
+      "map . ."
+      "react . reactions"
+      "react . reactions";
     column-gap: 0.9rem;
   }
 
@@ -498,7 +495,6 @@ form .required-field {
     width: 99%;
 
     @include desktop() {
-     
     }
 
     img {
@@ -532,7 +528,6 @@ form .required-field {
         border: 5px solid var(--c-lightblack);
       }
 
-      
       @include desktop() {
         width: 60%;
         margin: 0 auto;
@@ -552,9 +547,7 @@ form .required-field {
   .react {
     grid-area: react;
 
-
     form {
-      
       label {
         display: block;
         margin-top: 0.3rem;
@@ -572,7 +565,6 @@ form .required-field {
       }
 
       input[type="submit"] {
-    
         display: block;
         margin: 0.5rem auto;
         height: 50px;
@@ -585,70 +577,71 @@ form .required-field {
 
   .details {
     grid-area: details;
-     .list {
+    .list {
       padding-bottom: 25px;
 
       text-align: center;
-      
 
-       @include desktop() {
+      @include desktop() {
         h1 {
           text-indent: 0.5rem;
         }
-    
+
         &::before {
           text-indent: 0.5rem;
         }
 
         text-align: unset;
-       }
-        
-       font-size: 1.4rem;
-       border: solid thin var(--c-black);
-       ul {
-         width: 80%;
-         margin: 0 auto;
-         list-style:disc;
+      }
 
-         li {
-           margin: 0 auto;
-           width: fit-content;
+      font-size: 1.4rem;
+      border: solid thin var(--c-black);
+      ul {
+        width: 80%;
+        margin: 0 auto;
+        list-style: disc;
 
-           @include desktop() {
-             margin: 0;
-           }
-         }
-       }
-     }
+        li {
+          margin: 0 auto;
+          width: fit-content;
 
-     .likepanel {
-       margin-top: 0.3rem;
-       border: solid thin var(--c-black);
-       display: flex;
-       justify-content: space-around;
+          @include desktop() {
+            margin: 0;
+          }
+        }
+      }
+    }
 
-       a, p {
-         border: solid thin var(--c-black);padding: 0.5rem;
-         margin: 0.5rem;
-         width: 30px;
-         text-align: center;
-         border-radius: 15px;
-       }
+    .likepanel {
+      margin-top: 0.3rem;
+      border: solid thin var(--c-black);
+      display: flex;
+      justify-content: space-around;
 
-       @include desktop() {
-         margin-top: 1rem;
-       }
-     }
+      a,
+      p {
+        border: solid thin var(--c-black);
+        padding: 0.5rem;
+        margin: 0.5rem;
+        width: 30px;
+        text-align: center;
+        border-radius: 15px;
+      }
+
+      @include desktop() {
+        margin-top: 1rem;
+      }
+    }
   }
 
   .reactions {
     grid-area: reactions;
-  
   }
 }
 
 /* Footer */
 footer {
+  grid-area: footer;
   width: 100%;
   margin-top: 0.9375rem;
   background: var(--c-darkblue);

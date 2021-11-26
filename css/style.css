@@ -13,32 +13,40 @@
 /* Media Query Mixins */
 /* Mains & Headers */
 body {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header header header" "main main main" "footer footer footer";
   background: var(--c-extralightgrey);
 }
 
-#main-header {
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
   position: fixed;
-  width: 100%;
   top: 0;
   background: var(--c-white);
   text-align: center;
+  width: 100%;
   height: var(--m-mobile-header);
 }
 
 @media screen and (min-width: 800px) {
-  #main-header {
+  header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    height: var(--m-header);
     text-align: unset;
+    height: var(--m-header);
+    line-height: var(--m-header);
   }
 }
 
-#main-header .logo {
+header .elwyn-logo {
   font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   color: var(--c-black);
@@ -46,17 +54,11 @@ body {
   letter-spacing: 0.125rem;
 }
 
-#main-header .logo-blue {
+header .elwyn-logo-blue {
   color: var(--c-darkblue);
 }
 
-@media screen and (min-width: 800px) {
-  #main-header .logo {
-    line-height: var(--m-header);
-  }
-}
-
-#main-header .nav__list {
+header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +67,7 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  #main-header .nav__list {
+  header nav ul {
     -webkit-box-pack: unset;
         -ms-flex-pack: unset;
             justify-content: unset;
@@ -74,16 +76,16 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  #main-header .nav__list__item {
+  header nav ul__item {
     line-height: var(--m-header);
   }
 }
 
-#main-header .nav__list > li {
+header nav ul > li {
   position: relative;
 }
 
-#main-header .nav__list > li > ul.trip-dropdown {
+header nav ul > li > ul {
   display: none;
   line-height: 3rem;
   padding: 0.625rem;
@@ -96,28 +98,28 @@ body {
   border-radius: 0 0 0.625rem 0.625rem;
 }
 
-#main-header .nav__list > li > ul.trip-dropdown > li {
+header nav ul > li > ul > li {
   width: 12rem;
 }
 
-#main-header .nav__list > li > ul.trip-dropdown > li a {
+header nav ul > li > ul > li a {
   display: block;
   color: black;
   padding: 0.5rem 0.87rem;
 }
 
-#main-header .nav__list > li:hover > ul.trip-dropdown > li a:hover {
+header nav ul > li:hover > ul > li a:hover {
   color: var(--c-darkblue);
   background-color: var(--c-extralightgrey);
 }
 
 @media screen and (min-width: 1080px) {
-  #main-header .nav__list > li:hover > ul.trip-dropdown {
+  header nav ul > li:hover > ul {
     display: block;
   }
 }
 
-#main-header .nav__list .nav__btn {
+header nav ul > li a {
   display: block;
   color: var(--c-lightblack);
   font-size: 1.625rem;
@@ -126,29 +128,29 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  #main-header .nav__list .nav__btn {
+  header nav ul > li a {
     padding: 0 1.5rem;
     margin: 0 auto;
   }
 }
 
-#main-header .nav__list .nav__btn:hover {
+header nav ul > li a:hover {
   color: var(--c-lightblue);
 }
 
-#main-header .nav__list .nav__btn--active {
+header nav ul > li .elwyn-nav__btn--active {
   color: var(--c-black);
   border-bottom: solid thin var(--c-black);
 }
 
 @media screen and (min-width: 800px) {
-  #main-header .nav__list .nav__btn--active {
+  header nav ul > li .elwyn-nav__btn--active {
     border-bottom: unset;
     text-decoration: underline;
   }
 }
 
-#main-header form {
+header form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,26 +162,26 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  #main-header form {
+  header form {
     margin-top: calc((var(--m-header) / 2) - (1.56rem / 2));
     line-height: var(--m-header);
     height: 2rem;
   }
 }
 
-#main-header form > input[type="search"] {
+header form > input[type="search"] {
   width: 18.75rem;
   border-radius: 1.56rem 0 0 1.56rem;
   border-color: var(--c-black);
 }
 
 @media screen and (min-width: 800px) {
-  #main-header form > input[type="search"] {
+  header form > input[type="search"] {
     width: 18.75rem;
   }
 }
 
-#main-header form > input[type="submit"] {
+header form > input[type="submit"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 0 1.56rem 1.56rem 0;
@@ -187,18 +189,18 @@ body {
   border-color: var(--c-black);
 }
 
-#main-header .trips-button {
+header .elwyn-trips__btn {
   display: none;
 }
 
 @media screen and (min-width: 1080px) {
-  #main-header .trips-button {
+  header .elwyn-trips__btn {
     display: block;
     line-height: var(--m-header);
   }
 }
 
-#main-header .trips-button > button {
+header .elwyn-trips__btn > button {
   color: var(--c-black);
   background-color: var(--c-lightblue);
   border-radius: 1.56rem;
@@ -206,22 +208,7 @@ body {
   text-transform: uppercase;
 }
 
-.wrapper {
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 800px) {
-  .wrapper {
-    width: 80%;
-  }
-}
-
-@media screen and (min-width: 1080px) {
-  .wrapper {
-    width: 1080px;
-  }
-}
-
+/* REMOVE */
 .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -229,17 +216,21 @@ body {
 }
 
 /* Main Content */
-#main {
-  margin-top: var(--m-mobile-header);
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
   height: 100%;
+  margin: var(--m-mobile-header) auto 0 auto;
 }
 
-#main .container-main aside {
+main .elwyn-home_container aside {
   grid-area: aside;
 }
 
 @media screen and (min-width: 1080px) {
-  #main .container-main {
+  main .elwyn-home_container {
     display: -ms-grid;
     display: grid;
         grid-template-areas: "hero hero hero" "main-content aside aside";
@@ -247,27 +238,34 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  #main {
+  main {
+    width: 80%;
     margin-top: var(--m-header);
   }
 }
 
-#main .main-content {
+@media screen and (min-width: 1080px) {
+  main {
+    width: 1080px;
+  }
+}
+
+main .elwyn-main_content {
   grid-area: main-content;
 }
 
-.hero {
+.elwyn-hero {
   width: 100%;
   border: thin solid var(--c-lightblack);
   text-align: center;
   padding: 3.12rem 0;
 }
 
-.hero__title {
+.elwyn-hero h1 {
   font-size: 0.9375rem;
 }
 
-.hero__subtitle {
+.elwyn-hero h2 {
   color: var(--c-lightblack);
   letter-spacing: 0.125rem;
   line-height: 1.25rem;
@@ -276,26 +274,22 @@ body {
 }
 
 @media screen and (min-width: 1080px) {
-  .hero {
+  .elwyn-hero {
     grid-area: hero;
   }
 }
 
-article .main-article {
-  grid-area: main-article;
-}
-
-article > .article-title {
+article > h2 {
   font-weight: bold;
   margin: 0 0 0.3125rem 0.3125rem;
   font-size: 1.25rem;
 }
 
-article > .article-text {
+article > p {
   margin-left: 0.3125rem;
 }
 
-.organiser-card {
+.elwyn-organiser_card {
   border: thin solid var(--c-lightblack);
   text-align: center;
   width: 95%;
@@ -303,25 +297,28 @@ article > .article-text {
   margin: 0.5rem auto;
   -webkit-box-shadow: 0.625rem 0.75rem 0.5rem rgba(0, 0, 0, 0.5);
           box-shadow: 0.625rem 0.75rem 0.5rem rgba(0, 0, 0, 0.5);
+  padding: 0.3rem 0;
 }
 
-.organiser-card__title {
+.elwyn-organiser_card h1 {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 2.1875rem;
   margin-bottom: 0.625rem;
 }
 
-.organiser-card__image {
+.elwyn-organiser_card img {
   margin-bottom: 0.625rem;
   width: 12.5rem;
 }
 
-.organiser-card__text {
+.elwyn-organiser_card p {
   margin-bottom: 0.625rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
-form .required-field {
+form .elwyn-required_field {
   color: red;
 }
 
@@ -642,7 +639,8 @@ form .required-field {
       justify-content: space-around;
 }
 
-.container-trip_information .details .likepanel a, .container-trip_information .details .likepanel p {
+.container-trip_information .details .likepanel a,
+.container-trip_information .details .likepanel p {
   border: solid thin var(--c-black);
   padding: 0.5rem;
   margin: 0.5rem;
@@ -665,6 +663,10 @@ form .required-field {
 
 /* Footer */
 footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
   width: 100%;
   margin-top: 0.9375rem;
   background: var(--c-darkblue);

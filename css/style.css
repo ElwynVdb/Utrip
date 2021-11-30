@@ -502,7 +502,6 @@ form .elwyn-required_field {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: trip-image;
-  max-width: 798.3px;
   max-height: 558.8px;
 }
 
@@ -511,6 +510,12 @@ form .elwyn-required_field {
   width: 100%;
   height: 100%;
   border: solid 0.25rem var(--c-black);
+}
+
+@media screen and (min-width: 1080px) {
+  .elwyn-trip_info-container section:nth-of-type(2) {
+    max-width: 798.3px;
+  }
 }
 
 .elwyn-trip_info-container section:nth-of-type(3) {
@@ -614,8 +619,8 @@ form .elwyn-required_field {
   .elwyn-trip_info-container .elwyn-details .elwyn-list h1 {
     text-indent: 0.5rem;
   }
-  .elwyn-trip_info-container .elwyn-details .elwyn-list::before {
-    text-indent: 0.5rem;
+  .elwyn-trip_info-container .elwyn-details .elwyn-list ul {
+    padding-left: 20px;
   }
 }
 
@@ -652,11 +657,13 @@ form .elwyn-required_field {
 .elwyn-trip_info-container .elwyn-details .elwyn-likepanel a,
 .elwyn-trip_info-container .elwyn-details .elwyn-likepanel p {
   border: solid thin var(--c-black);
-  padding: 0.5rem;
+  padding: 0.5rem 0.6rem;
   margin: 0.5rem;
   width: 30px;
   text-align: center;
   border-radius: 15px;
+  color: var(--c-darkblue);
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1080px) {

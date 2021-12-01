@@ -264,6 +264,9 @@ form .elwyn-required_field {
     border: thin solid var(--c-lightblack);
     text-align: center;
     padding: 3.12rem 0;
+    background-image: url(../assets/images/stonehenge.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     h1 {
       font-size: 0.9375rem;
@@ -323,6 +326,7 @@ form .elwyn-required_field {
 
 /* Trip Page */
 .elwyn-trip_container {
+  width: 100%;
   max-width: 1440px;
 
   h1 {

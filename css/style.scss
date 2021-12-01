@@ -88,12 +88,6 @@ header {
       line-height: var(--m-header);
     }
 
-    &__item {
-      @include tablet() {
-        line-height: var(--m-header);
-      }
-    }
-
     > li {
       position: relative;
 
@@ -246,6 +240,7 @@ article {
 
   > p {
     margin-left: 0.3125rem;
+    line-height: 1.1rem;
   }
 }
 
@@ -350,6 +345,7 @@ form .elwyn-required_field {
       border: solid 0.2rem var(--c-lightblack);
       text-align: center;
       max-width: 400px;
+      min-width: 400px;
       margin-bottom: 0;
       margin-top: 0;
 
@@ -385,6 +381,7 @@ form .elwyn-required_field {
         margin: 0 auto;
         margin-top: 1rem;
         width: 95%;
+        height: 80px;
       }
 
       .elwyn-trip_card-button {
@@ -440,7 +437,7 @@ form .elwyn-required_field {
       input:last-child {
         display: block;
         width: unset;
-        margin: 0 auto;
+        margin: 1.5rem auto -2rem auto;
         padding: 1.2rem 1.8rem;
         background-color: unset;
         text-transform: uppercase;
@@ -542,7 +539,7 @@ form .elwyn-required_field {
       }
 
       @include desktop() {
-        width: 60%;
+        width: 90%;
         margin: 0 auto;
       }
     }
@@ -679,15 +676,16 @@ form .elwyn-required_field {
 
 /* Footer */
 footer {
+  margin-top: 5rem;
   grid-area: footer;
   width: 100%;
-  margin-top: 0.9375rem;
+
   background: var(--c-darkblue);
   text-align: center;
 
   > p {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding: 1.25rem 0;
   }
 }

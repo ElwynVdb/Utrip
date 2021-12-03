@@ -50,3 +50,6 @@ article {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+article h2 { font-weight: bold; margin: 0 0 0.3rem 0.3rem; font-size: 1.6rem; } 
+article p { margin-left: 0.3rem; line-height: 1.1rem; }

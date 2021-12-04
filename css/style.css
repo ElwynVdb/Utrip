@@ -99,6 +99,11 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 
 /*Trip detail map*/
 .elwyn-trip_info-container > section:nth-of-type(5) { grid-area: map; }
+.elwyn-trip_info-container > section:nth-of-type(5) article {
+  height: 300px;
+  border: var(--c-black) solid 0.2rem;
+  border-radius: 10px;
+}
 
 /*Trip detail react form*/
 .elwyn-trip_info-container > section:nth-of-type(6) { grid-area: react; }
@@ -115,7 +120,8 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 
 /*Trip like details*/
 .elwyn-trip_info-container > aside:first-of-type > section:last-of-type { display: flex; justify-content: space-around; background-color: var(--c-white); margin-top: 0.3rem; border: solid thin var(--c-black); }
-.elwyn-trip_info-container > aside:first-of-type > section:last-of-type > a, .elwyn-trip_info-container > aside:first-of-type > section:last-of-type > p { border: solid thin var(--c-black); padding: 0.5rem 0.6rem;  margin: 0.5rem;  width: 30px;  text-align: center;  border-radius: 15px; color: var(--c-darkblue); font-weight: bold; }
+.elwyn-trip_info-container > aside:first-of-type > section:last-of-type > a, .elwyn-trip_info-container > aside:first-of-type > section:last-of-type > p { border: solid thin var(--c-black); padding: 0.5rem 0.6rem;  margin: 0.5rem;  width: 30px;  text-align: center;  border-radius: 15px; color: var(--c-lightblack); font-weight: bold; }
+.elwyn-trip_info-container > aside:first-of-type > section:last-of-type > a:hover { color: var(--c-darkblue) }
 
 /*Trip reactions*/
 .elwyn-trip_info-container > aside:last-of-type { grid-area: reactions; }

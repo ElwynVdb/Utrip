@@ -63,7 +63,7 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 .elwyn-trip_container { max-width: 1440px; }
 .elwyn-trip_container h1 { font-size: 2.4rem; text-align: center; padding: 2.5rem; font-size: bold;}
 .elwyn-trip_container section {display: flex; gap: 1.3rem; flex-wrap: wrap;justify-content: center; }
-.elwyn-trip_container section article {margin: 0; background-color: var(--c-white); border: solid 0.2rem var(--c-lightblack); width: 400px; text-align: center; }
+.elwyn-trip_container section article { border-radius: 1rem; margin: 0; background-color: var(--c-white); border: solid 0.2rem var(--c-lightblack); width: 400px; text-align: center; }
 .elwyn-trip_container section article h2 { color: var(--c-lightblack); font-size: 2rem; margin: 0.5rem 0;}
 .elwyn-trip_container section article img { display: block; width: 80%; border: 0.15rem solid var(--c-lightblack); width: 320px; height: 240px; margin: 0 auto;}
 

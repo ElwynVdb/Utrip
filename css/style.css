@@ -46,7 +46,7 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 
 .elwyn-home_container aside { grid-area: trip-organisator; width: 95% ; max-width: 28rem; margin: 0 auto; border: thin solid var(--c-lightblack); text-align: center; box-shadow: 0.625rem 0.75rem 0.5rem rgba(0, 0, 0, 0.5); padding: 0.3rem 0; background-color: var(--c-white); max-height: 550px;}
 .elwyn-home_container aside h1 { font-weight: bold; text-transform: uppercase; font-size: 2.2rem; margin-bottom: 0.63rem; }
-.elwyn-home_container aside img { width: 90%; margin-bottom: 0.63rem; }
+.elwyn-home_container aside img { width: 90%; margin-bottom: 0.63rem; border: var(--c-black) 0.15rem solid;}
 .elwyn-home_container aside  p {width: 90%; margin: 0 auto; margin-bottom: 0.63rem;}
 
 /* Contact page */

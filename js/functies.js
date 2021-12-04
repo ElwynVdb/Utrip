@@ -1,9 +1,6 @@
 let likeButton = document.getElementById("elwyn-like_button");
 let likeCount = document.getElementById("elwyn-like_count");
-let locationName = document.getElementById("elwyn-trip_name").textContent;
-
-
-console.log(document.baseURI)
+let locationName = location.pathname.split("/")[2].replace(".html", "").toLowerCase();
 
 // Like button functionality
 likeButton.onclick = () => {
@@ -40,7 +37,7 @@ L.marker(leafletMapData.viewport).addTo(map)
 map.fitBounds(leafletMapData.bounds);
 
 function grabLeafletMapDataForTrip() {
-    switch(locationName.toLowerCase()) {
+    switch(locationName) {
         case "colosseum":
             return colloseum;
     }

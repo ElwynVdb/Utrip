@@ -120,8 +120,8 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 
 /*Trip like details*/
 .elwyn-trip_info-container > aside:first-of-type > section:last-of-type { display: flex; justify-content: space-around; background-color: var(--c-white); margin-top: 0.3rem; border: solid thin var(--c-black); }
-.elwyn-trip_info-container > aside:first-of-type > section:last-of-type > a, .elwyn-trip_info-container > aside:first-of-type > section:last-of-type > p { border: solid thin var(--c-black); padding: 0.5rem 0.6rem;  margin: 0.5rem;  width: 30px;  text-align: center;  border-radius: 15px; color: var(--c-lightblack); font-weight: bold; }
-.elwyn-trip_info-container > aside:first-of-type > section:last-of-type > a:hover { color: var(--c-darkblue) }
+.elwyn-trip_info-container > aside:first-of-type > section:last-of-type p { border: solid thin var(--c-black); padding: 0.5rem 0.6rem;  margin: 0.5rem;  width: 30px;  text-align: center;  border-radius: 15px; color: var(--c-lightblack); font-weight: bold; }
+.elwyn-trip_info-container > aside:first-of-type > section:last-of-type p:first-of-type { cursor: pointer; }
 
 /*Trip reactions*/
 .elwyn-trip_info-container > aside:last-of-type { grid-area: reactions; }
@@ -171,9 +171,7 @@ footer p { font-weight: bold; font-size: 1.4rem; padding: 1rem 0;}
   .elwyn-home_container, .elwyn-trip_info-container { max-width: 1080px; }
 
   /*Display again header*/
-  header nav ul li {
-    position: relative;
-  }
+  header nav ul li { position: relative; }
 
   header nav ul li:hover ul { display: block; position: absolute; background-color: var(--c-white); border: solid thin var(--c-black); left: -4.5rem; margin-top: -0.2rem; padding: 0.625rem; line-height: 3rem; border-radius: 0 0 0.625rem 0.625rem; }
   header nav ul li:hover ul li { width: 15rem;}

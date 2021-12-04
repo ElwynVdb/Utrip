@@ -2,6 +2,9 @@ let likeButton = document.getElementById("elwyn-like_button");
 let likeCount = document.getElementById("elwyn-like_count");
 let locationName = document.getElementById("elwyn-trip_name").textContent;
 
+
+console.log(document.baseURI)
+
 // Like button functionality
 likeButton.onclick = () => {
     let liked = likeCount.textContent == "2";

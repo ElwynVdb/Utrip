@@ -5,9 +5,7 @@ let locationName = document.getElementById("elwyn-trip_name").textContent;
 // Like button functionality
 likeButton.onclick = () => {
     let liked = likeCount.textContent == "2";
-    console.log(liked)
     likeCount.textContent = !liked ? "2" : "1";
-
     likeButton.style.color = !liked ? "#3a5bc5" : "#504b4b";
 } 
 

@@ -30,7 +30,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker(leafletMapData.viewport).addTo(map)
-.bindPopup('Colloseum<br> Rome')
+.bindPopup(leafletMapData.markerMessage)
 .openPopup();
 
 map.fitBounds(leafletMapData.bounds);

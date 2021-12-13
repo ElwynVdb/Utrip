@@ -11,7 +11,6 @@ likeButton.onclick = () => {
 // Leaflet
 let locationName = location.pathname.split("/")[2].replace(".html", "").toLowerCase();
 
-
 const stonehenge = {
     bounds: [[51.1789, -1.8262], [51.1789, -1.8262]],
     viewport: [51.1789, -1.8262],
@@ -42,8 +41,6 @@ const schloss = {
     viewport: [48.18548, 16.3128],
     markerMessage: 'Schloss Schönbrunn<br> Wenen'
 }
-
-
 
 // Automatically select which map we need to display, preventing code to be written again
 let leafletMapData = grabLeafletMapDataForTrip();

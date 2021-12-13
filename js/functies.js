@@ -32,6 +32,16 @@ const eiffeltower = {
     viewport: [48.8583, 2.2945],
     markerMessage: 'Eiffel Toren<br> Parijs'
 }
+const domvankeulen = {
+    bounds: [[50.9413, 6.9583], [50.9413, 6.9583]],
+    viewport: [50.9413, 6.9583],
+    markerMessage: 'Dom van Keulen<br> Keulen'
+}
+const schloss = {
+    bounds: [[48.18548, 16.3128], [48.18548, 16.3128]],
+    viewport: [48.18548, 16.3128],
+    markerMessage: 'Schloss Schönbrunn<br> Wenen'
+}
 
 
 
@@ -60,5 +70,7 @@ function grabLeafletMapDataForTrip() {
         case "notre-dame": return notredame;
         case "colosseum": return colloseum;
         case "eiffel-toren": return eiffeltower;
+        case "dom-van-keulen": return domvankeulen;
+        case "schloss": return schloss;
     }
 }

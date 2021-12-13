@@ -11,17 +11,29 @@ likeButton.onclick = () => {
 // Leaflet
 let locationName = location.pathname.split("/")[2].replace(".html", "").toLowerCase();
 
-const colloseum = {
-    bounds: [[41.8895, 12.4912], [41.891, 12.4935]],
-    viewport: [41.8902, 12.4922],
-    markerMessage: 'Colloseum<br> Rome'
-}
 
 const stonehenge = {
     bounds: [[51.1789, -1.8262], [51.1789, -1.8262]],
     viewport: [51.1789, -1.8262],
     markerMessage: 'Stonehenge<br> Wiltshire'
 }
+const notredame = {
+    bounds: [[48.8530, 2.3499], [48.8530, 2.3499]],
+    viewport: [48.8530, 2.3499],
+    markerMessage: 'Notre Dame<br> Parijs'
+}
+const colloseum = {
+    bounds: [[41.8895, 12.4912], [41.891, 12.4935]],
+    viewport: [41.8902, 12.4922],
+    markerMessage: 'Colloseum<br> Rome'
+}
+const eiffeltower = {
+    bounds: [[48.8583, 2.2945], [48.8583, 2.2945]],
+    viewport: [48.8583, 2.2945],
+    markerMessage: 'Eiffel Toren<br> Parijs'
+}
+
+
 
 // Automatically select which map we need to display, preventing code to be written again
 let leafletMapData = grabLeafletMapDataForTrip();
@@ -37,14 +49,16 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker(leafletMapData.viewport).addTo(map)
-.bindPopup(leafletMapData.markerMessage)
-.openPopup();
+    .bindPopup(leafletMapData.markerMessage)
+    .openPopup();
 
 map.fitBounds(leafletMapData.bounds);
 
 function grabLeafletMapDataForTrip() {
-    switch(locationName) {
-        case "colosseum": return colloseum;
+    switch (locationName) {
         case "stonehenge": return stonehenge;
+        case "notre-dame": return notredame;
+        case "colosseum": return colloseum;
+        case "eiffel-toren": return eiffeltower;
     }
 }

@@ -63,14 +63,14 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 .elwyn-trip_container { max-width: 1440px; }
 .elwyn-trip_container h1 { font-size: 2.4rem; text-align: center; padding: 2.5rem; font-size: bold;}
 .elwyn-trip_container section {display: flex; gap: 1.3rem; flex-wrap: wrap;justify-content: center; }
-.elwyn-trip_container section article { border-radius: 1rem; margin: 0; background-color: var(--c-white); border: solid 0.2rem var(--c-lightblack); width: 400px; text-align: center; }
+.elwyn-trip_container section article { border-radius: 1rem; margin: 0; background-color: var(--c-white); border: solid 0.2rem var(--c-lightblack); width: 350px; text-align: center;}
 .elwyn-trip_container section article h2 { color: var(--c-lightblack); font-size: 2rem; margin: 0.5rem 0;}
 .elwyn-trip_container section article img { display: block; width: 80%; border: 0.15rem solid var(--c-lightblack); width: 320px; height: 240px; margin: 0 auto;}
 
 .elwyn-trip_container section article span { display: flex; justify-content: space-evenly;  margin: 0.3rem 0;}
 .elwyn-trip_container section article span a {  display: inline-block;  padding: 0.3rem 0.7rem;  border: solid thin var(--c-lightblack);  border-radius: 15px; background: rgb(155, 160, 165); font-weight: bold; }
 
-.elwyn-trip_container section article p { margin: 0 auto; margin-top: 1rem; width: 95%;  height: 80px; }
+.elwyn-trip_container section article p { margin: 0 auto; margin-top: 1rem; width: 95%; height: 120px;}
 .elwyn-trip_container section article > a:last-of-type { display: inline-block; text-transform: uppercase; color: var(--c-black); margin: 0.9rem 0 0.3rem 0; padding: 0.5rem 2.5rem; border: solid thin var(--c-lightblack); border-radius: 0.9rem;font-weight: bold; }
 .elwyn-trip_container section article > a:last-of-type:hover {background-color: var(--c-extralightgrey);}
 
@@ -100,11 +100,7 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 
 /*Trip detail map*/
 .elwyn-trip_info-container > section:nth-of-type(5) { grid-area: map; }
-.elwyn-trip_info-container > section:nth-of-type(5) article {
-  height: 300px;
-  border: var(--c-black) solid 0.2rem;
-  border-radius: 10px;
-}
+.elwyn-trip_info-container > section:nth-of-type(5) article {  height: 300px; border: var(--c-black) solid 0.2rem;  border-radius: 10px;}
 
 /*Trip detail react form*/
 .elwyn-trip_info-container > section:nth-of-type(6) { grid-area: react; }
@@ -134,7 +130,6 @@ main { grid-area: main; margin: 0 auto 1.3rem auto;}
 /* Footer */
 footer { grid-area: footer; margin-top: auto; width: 100%; background-color: var(--c-darkblue); text-align: center; }
 footer p { font-weight: bold; font-size: 1.4rem; padding: 1rem 0;}
-
 
 /*Tablet*/
 @media only screen and (min-width: 800px) {
@@ -188,4 +183,8 @@ footer p { font-weight: bold; font-size: 1.4rem; padding: 1rem 0;}
 
  /*Trip detail > details*/
  .elwyn-trip_info-container > aside:first-of-type { width: 70%; }
+}
+
+@media screen and (min-width: 1444px) {
+  .elwyn-trip_container section article { max-width: unset; }
 }
